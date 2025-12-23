@@ -1,0 +1,106 @@
+Service.Html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — DCC Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/images/logo-light.png" alt="DCC Lab Logo" style="height:38px;">
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="demos.html">Demos</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="mobileToggleServices" class="mobile-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section services-section">
+      <div class="container">
+
+        <!-- HEADER -->
+        <div class="services-header">
+          <h1>Our Services</h1>
+          <p>Explore the full range of PHD1-enhanced products and immersive solutions.</p>
+        </div>
+
+        <!-- SERVICES GRID -->
+        <div class="services-grid">
+
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/hero-placeholder.png" alt="PHD1 for PHD" class="service-image">
+            </div>
+            <h3>PHD1 for PHD</h3>
+            <p>Flagship service for books and printed storytelling, enhanced with immersive augmented-reality layers.</p>
+            <a href="contact.html" class="btn btn-gold">Start a Project</a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/hero-placeholder.png" alt="PHD1 BC" class="service-image">
+            </div>
+            <h3>PHD1 BC</h3>
+            <p>Branded collateral, identity activation, and AR-enabled business cards designed to leave a lasting impression.</p>
+            <a href="contact.html" class="btn btn-gold">Start a Project</a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/hero-placeholder.png" alt="PHD1 MD" class="service-image">
+            </div>
+            <h3>PHD1 MD</h3>
+            <p>Merchandise activation with seamless e-commerce linking and immersive AR product experiences.</p>
+            <a href="contact.html" class="btn btn-gold">Start a Project</a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/hero-placeholder.png" alt="PHD1 FHC" class="service-image">
+            </div>
+            <h3>PHD1 FHC</h3>
+            <p>Family heritage & media activation — photos, stories, and AR keepsakes preserved for generations.</p>
+            <a href="contact.html" class="btn btn-gold">Start a Project</a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/hero-placeholder.png" alt="PHD1 for Schools" class="service-image">
+            </div>
+            <h3>PHD1 for Schools</h3>
+            <p>Educational materials transformed into interactive, culturally rich learning tools through augmented reality.</p>
+            <a href="contact.html" class="btn btn-gold">Start a Project</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearServices"></span> DCC Lab</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearServices').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>

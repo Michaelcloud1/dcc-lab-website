@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demos — DCC Lab</title>
+
+  <!-- PREMIUM FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0D0D0D;
+      color: #F2F2F2;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .demo-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    .demo-header p {
+      color: #C9C4B8;
+      margin-top: 0.75rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .demo-card {
+      background: linear-gradient(180deg, #16130F, #0D0D0D);
+      border-radius: 18px;
+      padding: 1.6rem;
+      border: 1px solid rgba(212,160,23,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .demo-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .demo-thumb {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      background: #1b160f;
+    }
+
+    .demo-thumb video {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+
+    .demo-card h3 {
+      text-align: center;
+      color: #E6D8A8;
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .demo-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #B08D57, #D4A017);
+      color: #0D0D0D;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(212,160,23,0.4);
+      color: #E6D8A8;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/images/logo-light.png" alt="DCC Lab Logo" style="height:38px;">
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="demos.html" class="active">Demos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="mobile-toggle">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <div class="container">
+
+    <div class="demo-header">
+      <h1>PHD1 Demo Showcase</h1>
+      <p>Experience short demo previews showcasing PHD1’s augmented-reality capabilities.</p>
+    </div>
+
+    <div class="demo-grid">
+
+      <!-- DEMO CARD 1 -->
+      <div class="demo-card">
+        <div class="demo-thumb">
+          <video controls poster="assets/images/hero-placeholder.png">
+            <source src="" type="video/mp4">
+          </video>
+        </div>
+        <h3>PHD1 for PHD</h3>
+        <div class="demo-actions">
+          <a href="https://wa.me/15877788404" target="_blank" class="btn btn-outline">WhatsApp</a>
+          <a href="https://dcclab.gumroad.com" target="_blank" class="btn btn-gold">Gumroad</a>
+        </div>
+      </div>
+
+      <!-- DEMO CARD 2 -->
+      <div class="demo-card">
+        <div class="demo-thumb">
+          <video controls poster="assets/images/hero-placeholder.png">
+            <source src="" type="video/mp4">
+          </video>
+        </div>
+        <h3>PHD1 BC</h3>
+        <div class="demo-actions">
+          <a href="https://wa.me/15877788404" target="_blank" class="btn btn-outline">WhatsApp</a>
+          <a href="https://dcclab.gumroad.com" target="_blank" class="btn btn-gold">Gumroad</a>
+        </div>
+      </div>
+
+      <!-- DEMO CARD 3 -->
+      <div class="demo-card">
+        <div class="demo-thumb">
+          <video controls poster="assets/images/hero-placeholder.png">
+            <source src="" type="video/mp4">
+          </video>
+        </div>
+        <h3>PHD1 MD</h3>
+        <div class="demo-actions">
+          <a href="https://wa.me/15877788404" target="_blank" class="btn btn-outline">WhatsApp</a>
+          <a href="https://dcclab.gumroad.com" target="_blank" class="btn btn-gold">Gumroad</a>
+        </div>
+      </div>
+
+      <!-- DEMO CARD 4 -->
+      <div class="demo-card">
+        <div class="demo-thumb">
+          <video controls poster="assets/images/hero-placeholder.png">
+            <source src="" type="video/mp4">
+          </video>
+        </div>
+        <h3>PHD1 FHC</h3>
+        <div class="demo-actions">
+          <a href="https://wa.me/15877788404" target="_blank" class="btn btn-outline">WhatsApp</a>
+          <a href="https://dcclab.gumroad.com" target="_blank" class="btn btn-gold">Gumroad</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="yearDemos"></span> DCC Lab</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yearDemos').innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>

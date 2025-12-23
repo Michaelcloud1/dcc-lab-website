@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — DCC Lab</title>
+
+  <meta name="description" content="Contact DCC Lab to start your PHD1 project." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ================= CONTACT PAGE ================= */
+
+    .contact-hero {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #0D0D0D, #551A8B);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-info h1 {
+      font-size: 2.6rem;
+      color: #D4A017;
+      text-shadow: 0 0 15px #D4A017;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: #F2F2F2;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .contact-info .email {
+      display: block;
+      margin-top: 1rem;
+      color: #D4A017;
+      font-weight: 600;
+    }
+
+    /* FORM */
+    .contact-form {
+      background: #0D0D0D;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(212,160,23,0.25);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1.2rem;
+      border-radius: 10px;
+      border: none;
+      background: #2E2E2E;
+      color: #fff;
+      font-family: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 12px #D4A017;
+    }
+
+    .contact-form button {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(37,211,102,0.6);
+      animation: pulse 2s infinite;
+      z-index: 200;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .contact-info p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark">D</div>
+        <div>
+          <div class="brand-name">DCC Lab</div>
+          <div class="brand-sub">CIT · PHD1</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="demos.html">Demos</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT -->
+  <main class="contact-hero">
+    <div class="container contact-grid">
+
+      <!-- LEFT -->
+      <div class="contact-info">
+        <h1>Contact DCC Lab</h1>
+        <p>
+          Start your PHD1 project with us. Share your idea and we’ll guide you through the next steps.
+        </p>
+
+        <a class="btn btn-gold" href="https://wa.me/15877788404" target="_blank">
+          Message on WhatsApp
+        </a>
+
+        <a class="email" href="mailto:culturetechcreativelab@gmail.com">
+          culturetechcreativelab@gmail.com
+        </a>
+      </div>
+
+      <!-- FORM -->
+      <form
+        class="contact-form"
+        action="mailto:culturetechcreativelab@gmail.com"
+        method="POST"
+        enctype="text/plain"
+      >
+
+        <input type="text" name="Name" placeholder="Your Name" required>
+
+        <input type="email" name="Email" placeholder="Your Email" required>
+
+        <select name="Project Type" required>
+          <option value="">Select Project Type</option>
+          <option>PHD1 for PHD</option>
+          <option>PHD1 BC</option>
+          <option>PHD1 MD</option>
+          <option>PHD1 FHC</option>
+          <option>PHD1 for Schools</option>
+        </select>
+
+        <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn btn-gold">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> DCC Lab</div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    href="https://wa.me/15877788404"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
+    ☎
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

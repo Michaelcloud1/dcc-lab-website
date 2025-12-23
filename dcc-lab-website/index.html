@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DCC Lab — CIT Powered by PHD1</title>
+  <meta name="description" content="DCC Lab builds culturally intelligent Afro-futuristic augmented reality experiences powered by PHD1." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #0f0c08; color: #e8e3db; margin: 0; }
+    h1,h2,h3,.hero-title { font-family: 'Playfair Display', serif; letter-spacing: 0.5px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    .site-header { background: #0f0c08; border-bottom: 1px solid #2b1f12; position: sticky; top: 0; z-index: 10; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark { background: linear-gradient(135deg, #6b4f2a, #c9a45c); color: #0f0c08; width: 42px; height: 42px; border-radius: 50%; display:flex; align-items:center; justify-content:center; font-weight:700; }
+    .brand-name { font-weight: 600; font-size: 1.1rem; }
+    .brand-sub { font-size: 0.75rem; color: #c9a45c; }
+    .nav-link { margin-left: 1.2rem; font-size: 0.9rem; color: #e8e3db; }
+    .cta-link { color: #c9a45c; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #0f0c08 0%, #2b1f12 60%, #3a2a16 100%); padding:6rem 0; }
+    .hero-title { font-size: 3rem; margin-bottom: 1rem; }
+    .hero-title .gold { color:#c9a45c; text-shadow:0 0 6px rgba(201,164,92,0.35);}
+    .hero-lead { font-size:1.1rem; max-width:600px; margin-bottom:2rem; line-height:1.6; }
+    .btn { display:inline-block; margin-right:0.75rem; padding:0.75rem 1.6rem; border-radius:30px; font-size:0.9rem; transition:all 0.3s ease; cursor:pointer;}
+    .btn-gold { background: linear-gradient(135deg,#6b4f2a,#c9a45c); color:#0f0c08; font-weight:600; }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .btn-outline { border:1px solid #6b4f2a; color:#e8e3db; }
+    .btn-outline:hover { background: rgba(201,164,92,0.1); }
+
+    .hero-card { position: relative; }
+    .hero-image { width: 100%; border-radius: 16px; animation: heroPulse 6s ease-in-out infinite; }
+    .glow-ring { position:absolute; inset:-20px; background: radial-gradient(circle, rgba(201,164,92,0.18), transparent 70%); border-radius:50%; z-index:-1; }
+
+    /* DEMO/SERVICE CARDS */
+    .demo-card, .service-card, .testimonial-card {
+      background:#16110b; padding:2rem; border-radius:14px; text-align:center; border:1px solid #2b1f12;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .demo-card:hover, .service-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(201,164,92,0.4);
+    }
+    .demo-card h3, .service-card h3, .testimonial-card h3 { color:#c9a45c; margin-bottom:0.75rem; }
+    .demo-card p, .service-card p, .testimonial-card p { font-size:0.95rem; line-height:1.4; color:#e8e3db; }
+    .demo-thumb, .service-icon { width:100%; border-radius:12px; margin-bottom:1rem; max-width:200px; margin-left:auto; margin-right:auto; animation: float 8s ease-in-out infinite; }
+
+    /* SECTIONS */
+    .section { padding:4rem 0; }
+    .section-dark { background:#16110b; }
+    .section-title { margin-bottom:2rem; font-size:2rem; color:#c9a45c; }
+    .grid { display:grid; gap:1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+
+    /* STATS */
+    .about-stats { display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:2rem; }
+    .stat { flex:1; background:#16110b; padding:2rem; border-radius:14px; text-align:center; }
+    .stat-num { font-size:2.5rem; color:#c9a45c; font-weight:700; }
+
+    /* TESTIMONIALS */
+    .testimonials { background:#2b1f12; padding:4rem 0; }
+    .testimonial-card { max-width:300px; margin:auto; }
+
+    /* CTA */
+    .cta { background:#2b1f12; padding:3rem 0; text-align:center; }
+
+    /* FOOTER */
+    .site-footer { background:#0f0c08; border-top:1px solid #2b1f12; padding:1.5rem 0; font-size:0.85rem; }
+    .footer-links a { margin-left:1rem; color:#c9a45c; }
+
+    /* MODAL */
+    .modal { display:none; position:fixed; z-index:50; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.85); justify-content:center; align-items:center; }
+    .modal-content { position:relative; max-width:800px; width:90%; background:#0f0c08; padding:1rem; border-radius:14px; }
+    .modal-content video { width:100%; border-radius:10px; }
+    .close { position:absolute; top:10px; right:20px; font-size:2rem; cursor:pointer; color:#c9a45c; }
+
+    /* ANIMATIONS */
+    @keyframes heroPulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(201,164,92,0.4)); }
+      50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(201,164,92,0.6)); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(201,164,92,0.4)); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo-mark">D</div>
+      <div>
+        <div class="brand-name">DCC Lab</div>
+        <div class="brand-sub">CIT · PHD1</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="demos.html" class="nav-link">Demos</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="contact.html" class="nav-link cta-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container grid" style="align-items:center;">
+    <div>
+      <h1 class="hero-title">CIT <span class="gold">Powered by PHD1</span></h1>
+      <p class="hero-lead">
+        Transforming books, family media, educational materials, and cultural assets
+        into immersive digital experiences. Explore storytelling through
+        the lens of Afro-futuristic technology.
+      </p>
+      <a class="btn btn-gold" href="demos.html">View PHD1 Demos</a>
+      <a class="btn btn-outline" href="https://wa.me/15877788404?text=Hi%20DCC%20Lab" target="_blank">Message on WhatsApp</a>
+    </div>
+    <div class="hero-card">
+      <img src="assets/images/hero-placeholder.png" alt="Afro-futuristic visual placeholder" class="hero-image">
+      <div class="glow-ring"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SHOWCASE -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">PHD1 Demo Showcase</h2>
+    <div class="grid">
+      <!-- Demo 1 -->
+      <div class="demo-card">
+        <img src="assets/images/demo-phd1.png" alt="PHD1 for PHD" class="demo-thumb">
+        <h3>PHD1 for PHD</h3>
+        <p>Flagship AR experience for personal, cultural, and educational storytelling.</p>
+        <button class="btn btn-gold" onclick="openModal('video1')">Watch Demo</button>
+      </div>
+      <!-- Demo 2 -->
+      <div class="demo-card">
+        <img src="assets/images/demo-bc.png" alt="PHD1 BC" class="demo-thumb">
+        <h3>PHD1 BC</h3>
+        <p>Business and cultural cards brought to life through AR interaction.</p>
+        <button class="btn btn-gold" onclick="openModal('video2')">Watch Demo</button>
+      </div>
+      <!-- Demo 3 -->
+      <div class="demo-card">
+        <img src="assets/images/demo-md.png" alt="PHD1 MD" class="demo-thumb">
+        <h3>PHD1 MD</h3>
+        <p>Media and documentation showcase transformed with interactive AR visuals.</p>
+        <button class="btn btn-gold" onclick="openModal('video3')">Watch Demo</button>
+      </div>
+      <!-- Demo 4 -->
+      <div class="demo-card">
+        <img src="assets/images/demo-fhc.png" alt="PHD1 FHC" class="demo-thumb">
+        <h3>PHD1 FHC</h3>
+        <p>Hospitality and cultural event AR experiences for immersive engagement.</p>
+        <button class="btn btn-gold" onclick="openModal('video4')">Watch Demo</button>
+      </div>
+      <!-- Demo 5 -->
+      <div class="demo-card">
+        <img src="assets/images/demo-contemporary.png" alt="Contemporary Demo" class="demo-thumb">
+        <h3>Contemporary Demo</h3>
+        <p>Next-gen experimental AR visuals showcasing future possibilities.</p>
+        <button class="btn btn-gold" onclick="openModal('video5')">Watch Demo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL VIDEOS -->
+<div id="video1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('video1')">&times;</span><video controls><source src="assets/videos/demo-phd1.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+<div id="video2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('video2')">&times;</span><video controls><source src="assets/videos/demo-bc.mp4" type="video/mp4"></video></div></div>
+<div id="video3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('video3')">&times;</span><video controls><source src="assets/videos/demo-md.mp4" type="video/mp4"></video></div></div>
+<div id="video4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('video4')">&times;</span><video controls><source src="assets/videos/demo-fhc.mp4" type="video/mp4"></video></div></div>
+<div id="video5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('video5')">&times;</span><video controls><source src="assets/videos/demo-contemporary.mp4" type="video/mp4"></video></div></div>
+
+<!-- SERVICES -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid">
+      <div class="service-card">
+        <img src="assets/images/service-books.png" alt="PHD1 Books" class="service-icon">
+        <h3>PHD1 Books</h3>
+        <p>Interactive AR books for cultural storytelling, education, and personal engagement.</p>
+        <a class="btn btn-outline" href="services.html#books">Learn More</a>
+      </div>
+      <div class="service-card">
+        <img src="assets/images/service-mercs.png" alt="PHD1 MERCS" class="service-icon">
+        <h3>PHD1 MERCS</h3>
+        <p>Merchandise items enhanced with AR for brand and cultural impact.</p>
+        <a class="btn btn-outline" href="services.html#mercs">Learn More</a>
+      </div>
+      <div class="service-card">
+        <img src="assets/images/service-fhm.png" alt="PHD1 FHM" class="service-icon">
+        <h3>PHD1 FHM</h3>
+        <p>Family media and photos transformed into interactive AR experiences.</p>
+        <a class="btn btn-outline" href="services.html#fhm">Learn More</a>
+      </div>
+      <div class="service-card">
+        <img src="assets/images/service-schools.png" alt="PHD1 for Schools" class="service-icon">
+        <h3>PHD1 for Schools</h3>
+        <p>Educational modules with AR to enhance learning and engagement.</p>
+        <a class="btn btn-outline" href="services.html#schools">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">About DCC Lab</h2>
+    <p>
+      DCC Lab merges heritage, culture, and technology. Powered by our proprietary PHD1 AR system, 
+      we transform static media—books, cards, family photos, educational materials, and hospitality assets—
+      into interactive experiences. Our mission is to bring stories to life, bridging the gap 
+      between tradition and digital innovation.
+    </p>
+    <div class="about-stats">
+      <div class="stat"><div class="stat-num">5</div><div>Core Demos</div></div>
+      <div class="stat"><div class="stat-num">4</div><div>Service Areas</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div>Mobile Ready</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-dark">
+  <div class="container">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="grid">
+      <div class="testimonial-card">
+        <h3>Client A</h3>
+        <p>"Working with DCC Lab brought our family photos to life! The AR experience was seamless and magical."</p>
+      </div>
+      <div class="testimonial-card">
+        <h3>Client B</h3>
+        <p>"Our school’s history lessons have never been more engaging. The PHD1 AR modules are transformative."</p>
+      </div>
+      <div class="testimonial-card">
+        <h3>Client C</h3>
+        <p>"Innovative, professional, and culturally intelligent — DCC Lab delivers experiences beyond expectations."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h3>Ready to bring stories to life?</h3>
+    <a class="btn btn-gold" href="contact.html">Start a Project</a>
+    <a class="btn btn-outline" href="https://wa.me/15877788404?text=Hi%20DCC%20Lab" target="_blank">Message on WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© 2025 DCC Lab</div>
+    <div class="footer-links">
+      <a href="mailto:giftotuuobinna1995@gmail.com">Email</a>
+      <a href="https://wa.me/15877788404" target="_
